@@ -1,8 +1,7 @@
-version: '3.8'
 services:
   vprodb:
     build:
-      context: ./Docker-files/db/
+      context: ./Docker-files/db
     image: omarmedhat/vprofiledb
     container_name: vprodb
     ports:
@@ -10,8 +9,7 @@ services:
     volumes:
       - vprodbdata:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD="vprodbpass"
-      - MYSQL_DATABASE="accounts"
+      - MYSQL_ROOT_PASSWORD=vprodbpass
   
   vprocache02:
     image: memcached
